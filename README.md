@@ -1,4 +1,4 @@
-# deno-utils
-some deno utilities
+<h1 align="center">deno-utils</h1>
+<h2 align="center">some utilities you can use in a deno environment.</h2>
 
-What I'm likely to use in a Deno environment
+
