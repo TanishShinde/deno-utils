@@ -66,13 +66,29 @@ export const readFile = async (file: string) => {
 }
 
 /**
- *
  * @param file 
  */
 export const readFileSync = (file: string) => {
   const decoder = new TextDecoder('utf-8')
   const data = Deno.readFileSync(file)
   return decoder.decode(data)
+}
+
+/**
+ * @param date
+ */
+export const readDate = (date: string) => {
+  const getDate = date ? new Date(date) : new Date()
+  const daysList: ('Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday')[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  return {
+    year: getDate.getFullYear(),
+    month: getDate.getMonth() + 1,
+    date: getDate.getDate(),
+    days: daysList[getDate.getDay()],
+    hour: getDate.getHours(),
+    minute: getDate.getMinutes(),
+    second: getDate.getSeconds(),
+  }
 }
 
 /**
